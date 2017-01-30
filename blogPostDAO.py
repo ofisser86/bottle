@@ -109,8 +109,8 @@ class BlogPostDAO:
 
         try:
             # XXX HW 3.3 Work here to add the comment to the designated post. When done, modify the line below to return the number of documents updated by your modification, rather than just -1.
-
-            return -1  # Change this to return the number of documents updated by the code for HW 3.3
+            self.posts.update({'permalink': permalink}, {'$push': {'comments': comment}})
+            return   # Change this to return the number of documents updated by the code for HW 3.3
 
         except:
             print "Could not update the collection, error"
